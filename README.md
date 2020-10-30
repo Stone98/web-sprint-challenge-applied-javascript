@@ -28,7 +28,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
-DOM stand for Document Object Model.
+DOM stand for Document Object Model and it defines the structure of documents and the ways to access and manipulate them.
 
 2. What is an event?
 
