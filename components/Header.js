@@ -27,10 +27,12 @@ function Header() {
     header.appendChild(title);
     header.appendChild(temperature);
 
-    // Class Names and Content
+    // Class Names
     header.classList.add('header');
     date.classList.add('date');
     temperature.classList.add('temp');
+
+    // Content
     date.textContent = 'MARCH 28, 2020';
     title.textContent = 'Lambda Times';
     temperature.textContent = '98°';
