@@ -52,14 +52,18 @@ function tabMaker(topic) {
     tab.textContent = topic;
     // Events
     tab.addEventListener('click', (event) => {
+        // Rules for tab selection:
+        // 1. If the all tab is the one that was clicked and is now selected it is needs to be the only tab that is selected
+        // 2. If no tab is selected, then the all tab needs to be selected
+        // 3. If the active list contains the all tab and any other tab, the all tab must be removed
         event.target.classList.toggle('active-tab');
         let id = event.target.id;
-        let tabs = document.getElementsByClassName('tab');
+        let tabs = document.getElementsByClassName('tab'); // This gets an array of all the tabs
         let activeList = [];
         let allTab = document.getElementById('All');
         let isAllActive = id === 'All' && allTab.classList.contains('active-tab');
 
-        if (isAllActive) {
+        if (isAllActive) { // enforce rule 1
             activeList.push('Alltopic');
             for (let tabIndex = 0; tabIndex < tabs.length; tabIndex++) {
                 const tab = tabs[tabIndex];
@@ -69,17 +73,17 @@ function tabMaker(topic) {
                     }
                 }
             }
-        } else {
+        } else { // Gets the list of all currently selected tabs
             for (let tabIndex = 0; tabIndex < tabs.length; tabIndex++) {
                 const tab = tabs[tabIndex];
                 if (tab.classList.contains('active-tab')) {
                     activeList.push(tab.id + 'topic');
                 }
             }
-            if (activeList.length === 0) {
+            if (activeList.length === 0) { // enforce rule 2
                 document.getElementById('All').classList.toggle('active-tab');
                 activeList.push('Alltopic');
-            } else if (activeList.length > 1) {
+            } else if (activeList.length > 1) { // enforce rule 3
                 if (activeList.indexOf('Alltopic') > -1) {
                     document.getElementById('All').classList.toggle('active-tab');
                     activeList = activeList.filter(function(item) {
@@ -89,12 +93,12 @@ function tabMaker(topic) {
             }
         }
         let topicContainers = document.getElementsByClassName('topic-container');
-        for (let index = 0; index < topicContainers.length; index++) {
+        for (let index = 0; index < topicContainers.length; index++) { // only show the sections that are in the active list or all sections if the all topic is in the list
             const topicContainer = topicContainers[index];
             if (activeList.indexOf(topicContainer.id) > -1 || activeList.indexOf('Alltopic') > -1) {
-                topicContainer.style.display = '';
+                topicContainer.style.display = ''; // show this item
             } else {
-                topicContainer.style.display = 'none';
+                topicContainer.style.display = 'none'; // hide this item
             }
 
         }

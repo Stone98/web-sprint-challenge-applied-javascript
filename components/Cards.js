@@ -39,6 +39,7 @@ Axios.get('https://lambda-times-api.herokuapp.com/articles')
         console.log('done');
     });
 
+// Makes the card and returns the card element but does not append it to the DOM
 function cardMaker(article) {
     // Instantiate
     const card = document.createElement('div');
@@ -69,7 +70,7 @@ function cardMaker(article) {
     return card;
 }
 
-
+// Makes the cards and adds them to the DOM
 function cardsMaker(authorInfo) {
     const cardSection = document.querySelector('.cards-container');
     let articles = authorInfo.articles;
