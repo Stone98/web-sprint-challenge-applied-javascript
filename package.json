@@ -1,23 +1,26 @@
 {
-  "name": "web-sprint-challenge-applied-javascript",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "parcel index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript/issues"
-  },
-  "homepage": "https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript#readme",
-  "devDependencies": {
-    "eslint": "^7.6.0",
-    "less": "^3.12.2",
-    "parcel-bundler": "^1.12.4"
-  }
+    "name": "web-sprint-challenge-applied-javascript",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "parcel index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript/issues"
+    },
+    "homepage": "https://github.com/LambdaSchool/web-sprint-challenge-applied-javascript#readme",
+    "devDependencies": {
+        "eslint": "^7.6.0",
+        "less": "^3.12.2",
+        "parcel-bundler": "^1.12.4"
+    },
+    "dependencies": {
+        "axios": "^0.21.0"
+    }
 }
